@@ -33,9 +33,9 @@ File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 
 ### Database Connection
 #### Login to Database
-    mongo "mongodb+srv://cluster0.01ube.mongodb.net/stratUp" --username admin
+    mongo "mongodb+srv://cluster0.01ube.mongodb.net/stratUp" --username whiterose
 #### Import Dataset
-    mongoimport --host atlas-wg6f26-shard-0/cluster0-shard-00-00.01ube.mongodb.net:27017,cluster0-shard-00-01.01ube.mongodb.net:27017,cluster0-shard-00-02.01ube.mongodb.net:27017 --ssl --username admin --password Devil123 --authenticationDatabase admin --db startUp --collection investments --type csv --file /home/ubuntu/StartUp-Investments-clean.csv --headerline
+    mongoimport --host atlas-wg6f26-shard-0/cluster0-shard-00-00.01ube.mongodb.net:27017,cluster0-shard-00-01.01ube.mongodb.net:27017,cluster0-shard-00-02.01ube.mongodb.net:27017 --ssl --username whiterose --password justforfun666ECorp --authenticationDatabase whiterose --db startUp --collection investments --type csv --file /home/ubuntu/StartUp-Investments-clean.csv --headerline
 
 ## Server Spesification
 ### Cloud Server (MongoDB Atlas)
