@@ -137,9 +137,17 @@ Dari chart di atas dapat diketahui bahwa pertumbuhan startup tiap tahunya semaki
 
 Pertumbuhan startup - startup baru dari tahun 2000 secara lebih jelas dapat dilihat pada chart diatas. Dari chart tersebut pertumbuhan startup terbanyak terjadi pada tahun **2012** dimana terdapat **5211** startup baru berdiri, kemudian dari tahun 2000 sampai 2015 tren pertumbuhan startup naik. Namun, pada tahun 2013 sampai 2014 pertumbuhan startup menunjukan penurunan. Hal ini dapat dipengaruhi oleh beberapa sebab.
 
+#### Top States for Startup in USA
+
+![IMG](images/charts/Top-States-for-Startup-in-USA.png)
+
+California memiliki jumlah startup maksimum dibandingkan dengan semua negara bagian lain di Amerika Serikat (USA).
+
 #### Status of Startups
 
 ![IMG](images/charts/Status-of-Startup.png)
+
+Chart diatas menunjukan bahwa sebagain besar startup masih terus berjalan (operating). Dari halaman Kaggle sendiri dataset terakhirkali diperbarui pada tanggal **18-02-2020**.
 
 ## Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
