@@ -3,9 +3,7 @@
 ## Introduction
 Dataset yang dianalisis merupakan data Investment Venture Capital (VC) terhadap beberapa StartUp dari berbagai market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
 
-Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk market analysis mengenai StratUp yang trending dan sebagainya, hal ini bermanfaat untuk membantu Investor memilih sektor StartUp mana yang akan di investasikan dan juga bagi pelaku StartUp dapat membantu pemilihan model bisnis yang akan digunakan.
-
-Kami memilih pembaahsan ini karena bagi kami sangatlah menarik untuk dibahas. :)
+Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk menghadirkan ide-ide startup yang cemerlang, dimana saat ini hal tersebut mungkin terasa sulit bagi calon wirausahawan terutama ketika tampaknya semua orang sudah menyapu setiap ide bagus untuk bisnis. Tetap saja, sangat mungkin untuk menjadi sukses dengan memperbaiki produk yang ada atau memutar ide unik pada ide lama. Manfaat wirausaha dapat membuat upaya meluncurkan startup sangat bermanfaat. Selain kebebasan yang berasal dari menjadi bos Anda sendiri, memulai bisnis membawa lebih banyak kemandirian, kepuasan kerja yang lebih besar, dan potensi penghasilan yang berpotensi terbuka. Hal tersebut yang melatar belakangi kami memilih topik ini.
 
 ## Dataset
 Kaggle Link: https://www.kaggle.com/arindam235/startup-investments-crunchbase
@@ -130,6 +128,14 @@ Output yang didapatkan adalah kita memiliki jumlah data sebanyak *49.439* dari *
 #### Startups Founding Year
 
 ![IMG](images/charts/Startups-Founding-Year.png)
+
+Dari chart di atas dapat diketahui bahwa pertumbuhan startup tiap tahunya semakin pesat ditunjukan dengan block chart yang semakin naik. Dimana pada rentang tahun 2000 - 2014 pertumbuhan stratup sangatlah pesat.
+
+#### Startups Since 2000
+
+![IMG](images/charts/Stratups-Since-2000.png)
+
+Pertumbuhan startup - startup baru dari tahun 2000 secara lebih jelas dapat dilihat pada chart diatas. Dari chart tersebut pertumbuhan startup terbanyak terjadi pada tahun **2012** dimana terdapat **5211** startup baru berdiri, kemudian dari tahun 2000 sampai 2015 tren pertumbuhan startup naik. Namun, pada tahun 2013 sampai 2014 pertumbuhan startup menunjukan penurunan. Hal ini dapat dipengaruhi oleh beberapa sebab.
 
 #### Status of Startups
 
