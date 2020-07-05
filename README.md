@@ -119,7 +119,7 @@ php cleaner
 Output yang didapatkan adalah kita memiliki jumlah data sebanyak **49.439 dari 54.294** data sebelumnya.
 
 ### Quick Analysis
-**Beberapahal yang dapat diketahui sacara langsung:**
+**Hal - hal yang diketahui:**
 1. Jumlah startup sangatlah condong ke kiri dimana pada data ini condong ke 3 negara yaitu US, GBR dan CAN. 3 negara tersebut menyumbang paling banyak data startup pada dataset ini.
 2. Dataset memiliki data startup yang berdiri dari tahun **1902 hingga 2014**.
 3. Sebagian banyak stratup yang ada pada dataset ini masih berjalan sampai saat ini.
@@ -156,6 +156,29 @@ California memiliki jumlah startup maksimum dibandingkan dengan semua negara bag
 Sebagain besar startup masih terus berjalan (operating), dan sebanyak 2.603 startup sudah ditutup (closed). Dari halaman Kaggle sendiri dataset terakhirkali diperbarui pada tanggal **18-02-2020**.
 
 ### Market and Status
+**Hal - hal yang diketahui:**
+1. Kategori market yang paling banyak dimainkan oleh perusahaan startup diantaranya adalah Software, Biotechnology, dan Mobile.
+2. Di USA dengan pendisribusian startup terbesar tren marketnya hampir sama dengan tren market keseluruhan.
+3. Market software adalah market yang paling banyak startup tutup (closed). Namun, ini dipengaruhi karena market software adalah market terbesar yang banyak dimainkan oleh startup sehingga diperlukan analisa lebih lanjut.
+4. Market software juga merupakan market yang sering diakuisisi (acquired)
+
+#### Top Startup Market Leaders
+
+![IMG](images/charts/Top-Startup-Market-Leaders.png)
+
+Untuk secara global, sebagian besar tren market startup adalah tentang Software & Teknologi
+
+#### Top Startup Market Leaders in USA
+
+![IMG](images/charts/Top-Startup-Market-Leaders-in-USA.png)
+
+Sementara itu di Amerika Serikat (USA) tren market startup hampir sama dengan tren market global.
+#### Top Startup Market Leaders in USA
+
+![IMG](images/charts/Top-Startup-Market-Leaders-in-IDN.png)
+
+Sebagai perbandingan di Indonesia (IDN) tren market startup tertuju pada E-commerce. Dua chart ini menunjukkan betapa berbedanya tren minat antara Amerika Serikat (USA) dan Indonesia (IDN)
+
 
 ## ⚠️ Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
