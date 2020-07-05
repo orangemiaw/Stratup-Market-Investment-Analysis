@@ -137,6 +137,12 @@ Dari chart di atas dapat diketahui bahwa pertumbuhan startup tiap tahunya semaki
 
 Pertumbuhan startup - startup baru dari tahun 2000 secara lebih jelas dapat dilihat pada chart diatas. Dari chart tersebut pertumbuhan startup terbanyak terjadi pada tahun **2012** dimana terdapat **5211** startup baru berdiri, kemudian dari tahun 2000 sampai 2015 tren pertumbuhan startup naik. Namun, pada tahun 2013 sampai 2014 pertumbuhan startup menunjukan penurunan. Hal ini dapat dipengaruhi oleh beberapa sebab.
 
+#### Distribution of Startup Across Countries
+
+![IMG](images/charts/Distribution-of-Startup-Across-Countries.png)
+
+Pendistribusian startup berdasarkan negara dikuasai oleh Amerika Serikat dengan memiliki startup 28793 startup yang telah berdiri. Kemudian diikuti United Kingdom dan Canada dibelakangnya.
+
 #### Top States for Startup in USA
 
 ![IMG](images/charts/Top-States-for-Startup-in-USA.png)
