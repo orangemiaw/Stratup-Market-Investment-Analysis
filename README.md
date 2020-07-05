@@ -210,8 +210,10 @@ Market yang sebagian besar perusahaan startup diakusisi, disini dipimpin oleh So
 
 ![IMG](images/charts/Top-Market-Funding-by-Angel-Investor.png)
 
-
 ### 5. Conclusion & What We Can Get ?
+Market startup secara global dikuasai oleh pengembangan perangkat lunak (software) dan startup sendiri berkembang sangat pesat di negara Amerika Serikat (USA), United Kingdoom (GBR), Canada (CAN) dan China (CHN). Tren yang ada di Indonesia dari dataset yang tersedia adalah tren market E-commerce.
+
+Dari analisis diatas terdapat peluang pada market Biotechnology dimana market ini paling banyak mendapatkan pendanaan pada Serie A - H, terlebih lagi jika diterapkan di Indonesia market ini masihlah belum ada pesainnya. hal tersebut menjadikan market Biotechnology merupakan market yang dapat diambil untuk pengembangan bisnis, namun perlu diketahui juga market Biotechnology ini memilikmi peluang yang kecil untuk mendapatkan pendanaan dari Angel Investor. Sebagai cara mengatasi pencarian pendanaan dari Angel Investor yang mungkin susah pada market Biotechnology kita dapat mengajukan pendanaan pada Seed Stage untuk pendanaan awal dilihat dari analisis yang ada.
 
 ## ⚠️ Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
