@@ -193,6 +193,25 @@ Market yang sebagian besar perusahaan startup ditutup dipimpin oleh market Softw
 Market yang sebagian besar perusahaan startup diakusisi, disini dipimpin oleh Software, Curated Web dan Enterprise Software
 
 ### 4. Fundings
+**Hal - hal yang diketahui:**
+1. Biotechnology merupakan market startup yang paling banyak mendapatkan pendanaan dari Series round A - H. Hal ini dapat menunjukan bahkan pergerakan bisnis kedepanya akan mulai terfokus pada pengembangan biotechnology ini.
+2. Market yang mendapatkan pendanaan terbesar pada Seed Stage adalah market software dengan jumlah pendanaan sebesar 853,923,812 USD. Seed Stage merupakan fase dimana startup telah menentukan solusi untuk permasalahan yang sudah divalidasi (Validate Idea). Selama menjalani fase seed stage, startup akan berfokus dalam pembuatan dan pengembangan produk / MVP.
+3. Sementara itu, ANgel Investor lebih banyak berinvestasi pada market Mobile berbanding tipis dengan market Software.
+
+#### Top Market Funding in Round A - H
+
+![IMG](images/charts/Top-Market-Funding-in-Round-A-H.png)
+
+#### Top Market Funding in Seed Stage
+
+![IMG](images/charts/Top-Market-Funding-in-Seed-Stage.png)
+
+#### Top Market Funding by Angel Investor
+
+![IMG](images/charts/Top-Market-Funding-by-Angel-Investor.png)
+
+
+### 5. Conclusion & What We Can Get ?
 
 ## ⚠️ Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
