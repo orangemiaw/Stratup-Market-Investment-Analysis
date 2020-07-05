@@ -119,7 +119,7 @@ php cleaner
 Output yang didapatkan adalah kita memiliki jumlah data sebanyak **49.439 dari 54.294** data sebelumnya.
 
 ### Quick Analysis
-***Beberapahal yang dapat diketahui sacara langsung:***
+**Beberapahal yang dapat diketahui sacara langsung:**
 1. Jumlah startup sangatlah condong ke kiri dimana pada data ini condong ke 3 negara yaitu US, GBR dan CAN. 3 negara tersebut menyumbang paling banyak data startup pada dataset ini.
 2. Dataset memiliki data startup yang berdiri dari tahun **1902 hingga 2014**.
 3. Sebagian banyak stratup yang ada pada dataset ini masih berjalan sampai saat ini.
@@ -153,7 +153,9 @@ California memiliki jumlah startup maksimum dibandingkan dengan semua negara bag
 
 ![IMG](images/charts/Status-of-Startup.png)
 
-Chart diatas menunjukan bahwa sebagain besar startup masih terus berjalan (operating). Dari halaman Kaggle sendiri dataset terakhirkali diperbarui pada tanggal **18-02-2020**.
+Sebagain besar startup masih terus berjalan (operating), dan sebanyak 2.603 startup sudah ditutup (closed). Dari halaman Kaggle sendiri dataset terakhirkali diperbarui pada tanggal **18-02-2020**.
 
-## Disclaimer
+### Market and Status
+
+## ⚠️ Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
