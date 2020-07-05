@@ -1,0 +1,20 @@
+<?php
+
+error_reporting(0);
+set_time_limit(0);
+
+$input = 'datasets/StartUp-Investments.csv';
+$output = 'datasets/StartUp-Investments-clean.csv';
+
+$no = 1;
+$load = file_get_contents($input);
+$values = explode("\r\n", $load);
+foreach($values as $value) {
+    $string = explode(",", $value);
+    if(!empty($string[1])) {
+        echo $no . " - " . $string[1] . "\n";
+        $file = fopen($output, "a");
+        fwrite($file, $value . "\n");
+        $no++;
+    }
+}
