@@ -1,11 +1,11 @@
 # Startup Investment (Crunchbase) Analysis using MongoDB
 
-## Introduction
+## 👋 Introduction
 Dataset yang dianalisis merupakan data Investment Venture Capital (VC), Angel Investor, maupun Seed Stage Investment terhadap beberapa Startup dari berbagai kategori market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
 
 Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk menghadirkan ide-ide startup yang cemerlang, dimana saat ini hal tersebut mungkin terasa sulit bagi calon wirausahawan terutama ketika tampaknya semua orang sudah menyapu setiap ide bagus untuk bisnis. Tetap saja, sangat mungkin untuk menjadi sukses dengan memperbaiki produk yang ada atau memutar ide unik pada ide lama. Manfaat wirausaha dapat membuat upaya meluncurkan startup sangat bermanfaat. Selain kebebasan yang berasal dari menjadi bos Anda sendiri, memulai bisnis membawa lebih banyak kemandirian, kepuasan kerja yang lebih besar, dan potensi penghasilan yang berpotensi terbuka. Hal tersebut yang melatar belakangi kami memilih topik ini.
 
-## Dataset
+## 📕 Dataset
 Kaggle Link: https://www.kaggle.com/arindam235/startup-investments-crunchbase
 
 Total Data Original: 54.294
@@ -14,12 +14,12 @@ Total Data After Cleaning: 49.439
 
 File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 
-## Tools Usage
+## 🌈 Tools Usage
 - MongoDB Atlas
 - MongoDB Charts
 - MongoDB Console
 
-## Credentials
+## 🦄 Credentials
 ### Database Access
     Username: whiterose
     Password: justforfun666ECorp
@@ -35,7 +35,7 @@ File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 #### Import Dataset
     mongoimport --host atlas-wg6f26-shard-0/cluster0-shard-00-00.01ube.mongodb.net:27017,cluster0-shard-00-01.01ube.mongodb.net:27017,cluster0-shard-00-02.01ube.mongodb.net:27017 --ssl --username whiterose --password justforfun666ECorp --authenticationDatabase whiterose --db startUp --collection investments --type csv --file /home/ubuntu/StartUp-Investments-clean.csv --headerline
 
-## Server Spesification
+## 💻 Server Spesification
 ### Cloud Server (MongoDB Atlas)
 - Provider: Amazon Web Services (AWS)
 - Region: Singapore (ap-southeast-1)
@@ -51,7 +51,7 @@ File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 - Storage: 640 GB SSD
 - Transfer: 7 TB
 
-## Query Performance Analysis
+## 🔥 Query Performance Analysis
 Performa eksekusi query dari database, dengan daftar query pada method API: find(), shord(), dan aggregat (sum, avg, min, dan max)
 
 ### Method: find()
@@ -108,7 +108,7 @@ db.investments.aggregate(
 
 ![IMG](images/aggregat-startup-status.PNG)
 
-## Data Analysis
+## 👨‍🔬 Data Analysis
 ### Data Cleaning
 Sebelum melakukan sebuah analisis perlu untuk melakukan pengecekan pada dataset apakah dataset tersebut sudah baik untuk digunakan. Setelah dilihat terdapat beberapa row data yang valuenya NaN atau kosong semua. Sehingga disini diperlukan pembersihan data (Data Cleaning) dengan cara menghapus data - data tersebut yang tidak terpakai. Untuk melakukan data cleaning kami menggunkan simple code PHP untuk melakukan pengecekan setiap row datanya memiliki field ```name``` atau tidak, jika didalam row tidak terdapat field ```name``` data row tersebut akan dihapus. Untuk melalukan data cleaning gunakan perintah:
 
