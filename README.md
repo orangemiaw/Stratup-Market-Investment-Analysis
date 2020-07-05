@@ -116,7 +116,7 @@ Sebelum melakukan sebuah analisis perlu untuk melakukan pengecekan pada dataset 
 php cleaner
 ```
 
-Output yang didapatkan adalah kita memiliki jumlah data sebanyak *49.439* dari *54.294* data sebelumnya.
+Output yang didapatkan adalah kita memiliki jumlah data sebanyak **49.439 dari 54.294** data sebelumnya.
 
 ### Quick Analysis
 ***Beberapahal yang dapat diketahui sacara langsung:***
