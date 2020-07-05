@@ -158,7 +158,7 @@ Sebagain besar startup masih terus berjalan (operating), dan sebanyak 2.603 star
 ### 3. Market and Status
 **Hal - hal yang diketahui:**
 1. Kategori market yang paling banyak dimainkan oleh perusahaan startup diantaranya adalah Software, Biotechnology, dan Mobile.
-2. Di USA dengan pendisribusian startup terbesar tren marketnya hampir sama dengan tren market keseluruhan.
+2. Di USA dengan pendistribusian startup terbesar tren marketnya hampir sama dengan tren market keseluruhan.
 3. Market software adalah market yang paling banyak startup tutup (closed). Namun, ini dipengaruhi karena market software adalah market terbesar yang banyak dimainkan oleh startup sehingga diperlukan analisa lebih lanjut.
 4. Market software juga merupakan market yang sering diakuisisi (acquired)
 
