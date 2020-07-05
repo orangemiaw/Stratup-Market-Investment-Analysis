@@ -1,4 +1,4 @@
-# StratUp Investment (Crunchbase) Analysis using MongoDB
+# Stratup Investment (Crunchbase) Analysis using MongoDB
 
 ## Introduction
 Dataset yang dianalisis merupakan data Investment Venture Capital (VC) terhadap beberapa StartUp dari berbagai market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
