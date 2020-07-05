@@ -109,7 +109,7 @@ db.investments.aggregate(
 ![IMG](images/aggregat-startup-status.PNG)
 
 ## 👨‍🔬 Data Analysis
-### Data Cleaning
+### 1. Data Cleaning
 Sebelum melakukan sebuah analisis perlu untuk melakukan pengecekan pada dataset apakah dataset tersebut sudah baik untuk digunakan. Setelah dilihat terdapat beberapa row data yang valuenya NaN atau kosong semua. Sehingga disini diperlukan pembersihan data (Data Cleaning) dengan cara menghapus data - data tersebut yang tidak terpakai. Untuk melakukan data cleaning kami menggunkan simple code PHP untuk melakukan pengecekan setiap row datanya memiliki field ```name``` atau tidak, jika didalam row tidak terdapat field ```name``` data row tersebut akan dihapus. Untuk melalukan data cleaning gunakan perintah:
 
 ```bash
@@ -118,7 +118,7 @@ php cleaner
 
 Output yang didapatkan adalah kita memiliki jumlah data sebanyak **49.439 dari 54.294** data sebelumnya.
 
-### Quick Analysis
+### 2. Quick Analysis
 **Hal - hal yang diketahui:**
 1. Jumlah startup sangatlah condong ke kiri dimana pada data ini condong ke 3 negara yaitu US, GBR dan CAN. 3 negara tersebut menyumbang paling banyak data startup pada dataset ini.
 2. Dataset memiliki data startup yang berdiri dari tahun **1902 hingga 2014**.
@@ -155,7 +155,7 @@ California memiliki jumlah startup maksimum dibandingkan dengan semua negara bag
 
 Sebagain besar startup masih terus berjalan (operating), dan sebanyak 2.603 startup sudah ditutup (closed). Dari halaman Kaggle sendiri dataset terakhirkali diperbarui pada tanggal **18-02-2020**.
 
-### Market and Status
+### 3. Market and Status
 **Hal - hal yang diketahui:**
 1. Kategori market yang paling banyak dimainkan oleh perusahaan startup diantaranya adalah Software, Biotechnology, dan Mobile.
 2. Di USA dengan pendisribusian startup terbesar tren marketnya hampir sama dengan tren market keseluruhan.
@@ -173,12 +173,26 @@ Untuk secara global, sebagian besar tren market startup adalah tentang Software 
 ![IMG](images/charts/Top-Startup-Market-Leaders-in-USA.png)
 
 Sementara itu di Amerika Serikat (USA) tren market startup hampir sama dengan tren market global.
+
 #### Top Startup Market Leaders in Indonesia (IDN)
 
 ![IMG](images/charts/Top-Startup-Market-Leaders-in-IDN.png)
 
 Sebagai perbandingan di Indonesia (IDN) tren market startup tertuju pada E-commerce. Dua chart ini menunjukkan betapa berbedanya tren minat antara Amerika Serikat (USA) dan Indonesia (IDN)
 
+#### Markets That Most Startups Closed
+
+![IMG](images/charts/Markets-That-Most-Startups-Closed.png)
+
+Market yang sebagian besar perusahaan startup ditutup dipimpin oleh market Software, Curated Web dan Mobile
+
+#### Markets That Most Startups Acquired
+
+![IMG](images/charts/Markets-That-Most-Startups-Acquired.png)
+
+Market yang sebagian besar perusahaan startup diakusisi, disini dipimpin oleh Software, Curated Web dan Enterprise Software
+
+### 4. Fundings
 
 ## ⚠️ Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
