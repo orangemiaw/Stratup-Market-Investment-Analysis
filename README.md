@@ -1,4 +1,4 @@
-# Stratup Investment (Crunchbase) Analysis using MongoDB
+# Startup Investment (Crunchbase) Analysis using MongoDB
 
 ## Introduction
 Dataset yang dianalisis merupakan data Investment Venture Capital (VC) terhadap beberapa StartUp dari berbagai market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
@@ -8,11 +8,11 @@ Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk mark
 Kami memilih pembaahsan ini karena bagi kami sangatlah menarik untuk dibahas. :)
 
 ## Dataset
-Link: https://www.kaggle.com/arindam235/startup-investments-crunchbase
+Kaggle Link: https://www.kaggle.com/arindam235/startup-investments-crunchbase
 
-Total Data: 54.294
+Total Data Original: 54.294
 
-Total Data (Clean): 49.439
+Total Data After Cleaning: 49.439
 
 File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 
@@ -67,7 +67,7 @@ db.investments.find().explain("executionStats")
 - Time: 16ms
 - Screenshot:
 
-![IMG_1](images/find-all.PNG)
+![IMG](images/find-all.PNG)
 
 #### Get Startups Since 2000
 ```javascript
@@ -79,7 +79,7 @@ db.investments.find(
 - Time: 29ms
 - Screenshot:
 
-![IMG_1](images/find-stratup-since-2000.PNG)
+![IMG](images/find-stratup-since-2000.PNG)
 
 ### Method: aggregat()
 -------------
@@ -89,8 +89,51 @@ db.investments.find(
 db.investments.aggregate( 
     {$group : { _id : { "market" : "$market", "name" : "$name" }, startup : { $sum : 1 } } }, 
     {$group : { _id : "$_id.market", startup : { $sum : 1 } } } 
-).toArray()
+)
 ```
+- Total Returned Data: NaN
+- Time: NaN
+- Screenshot:
+
+![IMG](images/aggregat-startup-market.PNG)
+
+#### Get Current Startup Status
+```javascript
+db.investments.aggregate( 
+    {$group : { _id : { "status" : "$status", "name" : "$name" }, startup : { $sum : 1 } } }, 
+    {$group : { _id : "$_id.status", startup : { $sum : 1 } } } 
+)
+```
+- Total Returned Data: NaN
+- Time: NaN
+- Screenshot:
+
+![IMG](images/aggregat-startup-status.PNG)
+
+## Data Analysis
+### Data Cleaning
+Sebelum melakukan sebuah analisis perlu untuk melakukan pengecekan pada dataset apakah dataset tersebut sudah baik untuk digunakan. Setelah dilihat terdapat beberapa row data yang valuenya NaN atau kosong semua. Sehingga disini diperlukan pembersihan data (Data Cleaning) dengan cara menghapus data - data tersebut yang tidak terpakai. Untuk melakukan data cleaning kami menggunkan simple code PHP untuk melakukan pengecekan setiap row datanya memiliki field ```name``` atau tidak, jika didalam row tidak terdapat field ```name``` data row tersebut akan dihapus. Untuk melalukan data cleaning gunakan perintah:
+
+```bash
+php cleaner
+```
+
+Output yang didapatkan adalah kita memiliki jumlah data sebanyak *49.439* dari *54.294* data sebelumnya.
+
+### Quick Analysis
+***Beberapahal yang dapat diketahui sacara langsung:***
+1. Jumlah startup sangatlah condong ke kiri dimana pada data ini condong ke 3 negara yaitu US, GBR dan CAN. 3 negara tersebut menyumbang paling banyak data startup pada dataset ini.
+2. Dataset memiliki data startup yang berdiri dari tahun **1902 hingga 2014**.
+3. Sebagian banyak stratup yang ada pada dataset ini masih berjalan sampai saat ini.
+4. Analisis pada dataset ini dapat memberikan gambaran mengenai pengembangan startup yang dapat dilakukan maupun sebagai gambaran etrhadap investor untuk sebagai bahan pertimbangan memberikan funding.
+
+#### Startups Founding Year
+
+![IMG](images/charts/Startups-Founding-Year.png)
+
+#### Status of Startups
+
+![IMG](images/charts/Status-of-Startup.png)
 
 ## Disclaimer
 ***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this application ( - Imam Kusniadi - ).***
