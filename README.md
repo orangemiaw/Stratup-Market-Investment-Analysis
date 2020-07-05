@@ -1,7 +1,7 @@
 # Startup Investment (Crunchbase) Analysis using MongoDB
 
 ## Introduction
-Dataset yang dianalisis merupakan data Investment Venture Capital (VC) terhadap beberapa StartUp dari berbagai market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
+Dataset yang dianalisis merupakan data Investment Venture Capital (VC), Angel Investor, maupun Seed Stage Investment terhadap beberapa Startup dari berbagai kategori market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
 
 Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk menghadirkan ide-ide startup yang cemerlang, dimana saat ini hal tersebut mungkin terasa sulit bagi calon wirausahawan terutama ketika tampaknya semua orang sudah menyapu setiap ide bagus untuk bisnis. Tetap saja, sangat mungkin untuk menjadi sukses dengan memperbaiki produk yang ada atau memutar ide unik pada ide lama. Manfaat wirausaha dapat membuat upaya meluncurkan startup sangat bermanfaat. Selain kebebasan yang berasal dari menjadi bos Anda sendiri, memulai bisnis membawa lebih banyak kemandirian, kepuasan kerja yang lebih besar, dan potensi penghasilan yang berpotensi terbuka. Hal tersebut yang melatar belakangi kami memilih topik ini.
 
@@ -123,7 +123,7 @@ Output yang didapatkan adalah kita memiliki jumlah data sebanyak *49.439* dari *
 1. Jumlah startup sangatlah condong ke kiri dimana pada data ini condong ke 3 negara yaitu US, GBR dan CAN. 3 negara tersebut menyumbang paling banyak data startup pada dataset ini.
 2. Dataset memiliki data startup yang berdiri dari tahun **1902 hingga 2014**.
 3. Sebagian banyak stratup yang ada pada dataset ini masih berjalan sampai saat ini.
-4. Analisis pada dataset ini dapat memberikan gambaran mengenai pengembangan startup yang dapat dilakukan maupun sebagai gambaran etrhadap investor untuk sebagai bahan pertimbangan memberikan funding.
+4. Analisis pada dataset ini dapat memberikan gambaran mengenai pengembangan startup yang dapat dilakukan maupun sebagai gambaran terhadap investor untuk sebagai bahan pertimbangan memberikan funding.
 
 #### Startups Founding Year
 
