@@ -168,12 +168,12 @@ Sebagain besar startup masih terus berjalan (operating), dan sebanyak 2.603 star
 
 Untuk secara global, sebagian besar tren market startup adalah tentang Software & Teknologi
 
-#### Top Startup Market Leaders in USA
+#### Top Startup Market Leaders in Amerika Serikat (USA)
 
 ![IMG](images/charts/Top-Startup-Market-Leaders-in-USA.png)
 
 Sementara itu di Amerika Serikat (USA) tren market startup hampir sama dengan tren market global.
-#### Top Startup Market Leaders in USA
+#### Top Startup Market Leaders in Indonesia (IDN)
 
 ![IMG](images/charts/Top-Startup-Market-Leaders-in-IDN.png)
 
