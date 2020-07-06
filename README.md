@@ -5,6 +5,11 @@ Dataset yang dianalisis merupakan data Investment Venture Capital (VC), Angel In
 
 Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk menghadirkan ide-ide startup yang cemerlang, dimana saat ini hal tersebut mungkin terasa sulit bagi calon wirausahawan terutama ketika tampaknya semua orang sudah menyapu setiap ide bagus untuk bisnis. Tetap saja, sangat mungkin untuk menjadi sukses dengan memperbaiki produk yang ada atau memutar ide unik pada ide lama. Manfaat wirausaha dapat membuat upaya meluncurkan startup sangat bermanfaat. Selain kebebasan yang berasal dari menjadi bos Anda sendiri, memulai bisnis membawa lebih banyak kemandirian, kepuasan kerja yang lebih besar, dan potensi penghasilan yang berpotensi terbuka. Hal tersebut yang melatar belakangi kami memilih topik ini.
 
+## 😊 Teams
+- Imam Kusniadi (17.11.1341)
+- Angga Kurniawan (17.11.1373)
+- Mahmuddin Faqih A (17.11.1399)
+
 ## 📕 Dataset
 Kaggle Link: https://www.kaggle.com/arindam235/startup-investments-crunchbase
 
