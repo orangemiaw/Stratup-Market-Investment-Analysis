@@ -127,8 +127,11 @@ time(() => db.investments.distinct("market").length)
 
 Maka diketahui bahwa terdapat sebanyak **754** kategori market yang dimainkan oleh startup - startup yang ada. Untuk performa querynya sendiri dari query yang sebelumnya execution timenya lebih banyak hal ini dikarenakan dengan menggunakan ```distinct``` data yang sama tidak akan ditampilkan.
 
-### 2. Method: short()
+### 2. Method: sort()
 -------------
+
+
+
 
 ### 3. Method: aggregat()
 -------------
@@ -202,6 +205,7 @@ time(() => db.investments.aggregate(
 
 ## 👨‍🔬 Data Analysis
 ### 1. Data Cleaning
+-------------
 Sebelum melakukan sebuah analisis perlu untuk melakukan pengecekan pada dataset apakah dataset tersebut sudah baik untuk digunakan. Setelah dilihat terdapat beberapa row data yang valuenya NaN atau kosong semua. Sehingga disini diperlukan pembersihan data (Data Cleaning) dengan cara menghapus data - data tersebut yang tidak terpakai. Untuk melakukan data cleaning kami menggunkan simple code PHP untuk melakukan pengecekan setiap row datanya memiliki field ```name``` atau tidak, jika didalam row tidak terdapat field ```name``` data row tersebut akan dihapus. Untuk melalukan data cleaning gunakan perintah:
 
 ```bash
@@ -211,6 +215,7 @@ php cleaner
 Output yang didapatkan adalah kita memiliki jumlah data sebanyak **49.439 dari 54.294** data sebelumnya.
 
 ### 2. Quick Analysis
+-------------
 **Hal - hal yang diketahui:**
 1. Jumlah startup sangatlah condong ke kiri dimana pada data ini condong ke 3 negara yaitu US, GBR dan CAN. 3 negara tersebut menyumbang paling banyak data startup pada dataset ini.
 2. Dataset memiliki data startup yang berdiri dari tahun **1902 hingga 2014**.
@@ -248,6 +253,7 @@ California memiliki jumlah startup maksimum dibandingkan dengan semua negara bag
 Sebagain besar startup masih terus berjalan (operating), dan sebanyak 2.603 startup sudah ditutup (closed). Dari halaman Kaggle sendiri dataset terakhirkali diperbarui pada tanggal **18-02-2020**.
 
 ### 3. Market and Status
+-------------
 **Hal - hal yang diketahui:**
 1. Kategori market yang paling banyak dimainkan oleh perusahaan startup diantaranya adalah Software, Biotechnology, dan Mobile.
 2. Di USA dengan pendistribusian startup terbesar tren marketnya hampir sama dengan tren market keseluruhan.
@@ -285,6 +291,7 @@ Market yang sebagian besar perusahaan startup ditutup dipimpin oleh market Softw
 Market yang sebagian besar perusahaan startup diakusisi, disini dipimpin oleh Software, Curated Web dan Enterprise Software
 
 ### 4. Fundings
+-------------
 **Hal - hal yang diketahui:**
 1. Biotechnology merupakan market startup yang paling banyak mendapatkan pendanaan dari Series round A - H. Hal ini dapat menunjukan bahkan pergerakan bisnis kedepanya akan mulai terfokus pada pengembangan biotechnology ini.
 2. Market yang mendapatkan pendanaan terbesar pada Seed Stage adalah market software dengan jumlah pendanaan sebesar 853,923,812 USD. Seed Stage merupakan fase dimana startup telah menentukan solusi untuk permasalahan yang sudah divalidasi (Validate Idea). Selama menjalani fase seed stage, startup akan berfokus dalam pembuatan dan pengembangan produk / MVP.
@@ -302,7 +309,7 @@ Market yang sebagian besar perusahaan startup diakusisi, disini dipimpin oleh So
 
 ![IMG](images/charts/Top-Market-Funding-by-Angel-Investor.png)
 
-### 5. Conclusion & What We Can Get ?
+## Conclusion & What We Can Get ?
 Market startup secara global dikuasai oleh pengembangan perangkat lunak (software) dan startup sendiri berkembang sangat pesat di negara Amerika Serikat (USA), United Kingdoom (GBR), Canada (CAN) dan China (CHN). Tren yang ada di Indonesia dari dataset yang tersedia adalah tren market E-commerce.
 
 Dari analisis diatas terdapat peluang pada market Biotechnology dimana market ini paling banyak mendapatkan pendanaan pada Serie A - H, terlebih lagi jika diterapkan di Indonesia market ini masihlah belum ada pesainnya. hal tersebut menjadikan market Biotechnology merupakan market yang dapat diambil untuk pengembangan bisnis, namun perlu diketahui juga market Biotechnology ini memilikmi peluang yang kecil untuk mendapatkan pendanaan dari Angel Investor. Sebagai cara mengatasi pencarian pendanaan dari Angel Investor yang mungkin susah pada market Biotechnology kita dapat mengajukan pendanaan pada Seed Stage untuk pendanaan awal dilihat dari analisis yang ada.
