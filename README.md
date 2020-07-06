@@ -52,61 +52,153 @@ File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 - Transfer: 7 TB
 
 ## 🔥 Query Performance Analysis
-Performa eksekusi query dari database, dengan daftar query pada method API: find(), shord(), dan aggregat (sum, avg, min, dan max)
+Performa eksekusi query dari database, dengan daftar query pada method API: find(), shord(), dan aggregat (sum, avg, min, dan max). Pertama, kami akan menambahkan sebuah fungsi untuk menghitung sebuah query dijalankan. Untuk menambahkan fungsi tersebut kita menambahkan code program dibawah pada file ```.mongorc.js```.
 
-### Method: find()
+```javascript
+function time(command) {
+    const start = new Date();
+    const result = command();
+    const end = new Date();
+    print("Execute Time: " + (end - start) + "ms");
+    return result; 
+}
+```
+
+Sehingga untuk menjalankan sebuah query akan seperti ini nantinya:
+
+```javascript
+time(() => db.coll.aggregate(...))
+```
+
+Namun, fungsi ini tidak cocok digunakan pada method ```find()```, sehingga untuk method ```find()``` akan menggunakan ```explain("executionStats")``` untuk dapat melihat statistik berapa lama waktu yang dibutuhkan untuk menyelesaikan sebuah query.
+
+### 1. Method: find()
 -------------
 
 #### Get All Data
+
+Query di bawah akan menampilkan semuda data yang ada pada dataset secara keseluruhan.
+
 ```javascript
 db.investments.find().explain("executionStats")
 ```
-- Total Returned Data: 49438
-- Time: 16ms
+- Total Returned Data: **49.438**
+- Execution Time: **16ms**
 - Screenshot:
 
 ![IMG](images/find-all.PNG)
 
 #### Get Startups Since 2000
+
+Untuk mendapatkan data seluruh startup yang berdiri dari tahun 2000 dapat menggunakan query di bawah. Untuk hal tersebut dibutuhkan pemfilteran dengan menambahkan query operator ```$gte```. Dengan menambahkan operator atau filter tambahan pada method find execution timenya menjadi lebih besar dari pada tanpa menggunakan operator atau filter tambahan, hal ini terjadi karena akan diperlukan pengecekan pada dokumen untuk dapat menampilkan data yang sesuai dengan filter atau operator yang ditentukan.
+
 ```javascript
 db.investments.find(
     { founded_year : { $gte: 2000 } }
 ).explain("executionStats")
 ```
-- Total Returned Data: 34823
-- Time: 29ms
+- Total Returned Data: **34.823**
+- Execution Time: **29ms**
 - Screenshot:
 
 ![IMG](images/find-stratup-since-2000.PNG)
 
-### Method: aggregat()
+#### Get All Market Category
+
+Kita akan coba mengecek market apa saja yang sebenarnya ada dalam dataset tersebut. 
+
+```javascript
+time(() => db.investments.distinct("market"))
+```
+
+Untuk mengecek berapa jumlah data yang ditampilkan
+
+```javascript
+time(() => db.investments.distinct("market").length)
+```
+
+- Total Returned Data: **754**
+- Execution Time: **240ms**
+- Screenshot:
+
+![IMG](images/find-unique-market.PNG)
+
+![IMG](images/find-unique-market-total.PNG)
+
+Maka diketahui bahwa terdapat sebanyak **754** kategori market yang dimainkan oleh startup - startup yang ada. Untuk performa querynya sendiri dari query yang sebelumnya execution timenya lebih banyak hal ini dikarenakan dengan menggunakan ```distinct``` data yang sama tidak akan ditampilkan.
+
+### 2. Method: short()
+-------------
+
+### 3. Method: aggregat()
 -------------
 
 #### Get Total Startup in Each Market
 ```javascript
-db.investments.aggregate( 
+time(() => db.investments.aggregate( 
     {$group : { _id : { "market" : "$market", "name" : "$name" }, startup : { $sum : 1 } } }, 
     {$group : { _id : "$_id.market", startup : { $sum : 1 } } } 
-)
+).toArray())
 ```
-- Total Returned Data: NaN
-- Time: NaN
+- Total Returned Data: **754**
+- Execution Time: **577ms**
 - Screenshot:
 
 ![IMG](images/aggregat-startup-market.PNG)
 
 #### Get Current Startup Status
 ```javascript
-db.investments.aggregate( 
+time(() => db.investments.aggregate( 
     {$group : { _id : { "status" : "$status", "name" : "$name" }, startup : { $sum : 1 } } }, 
     {$group : { _id : "$_id.status", startup : { $sum : 1 } } } 
-)
+))
 ```
-- Total Returned Data: NaN
-- Time: NaN
+- Total Returned Data: **4**
+- Execution Time: **276ms**
 - Screenshot:
 
 ![IMG](images/aggregat-startup-status.PNG)
+
+#### Get Information About Top Maximum Funding in Each Market at Serie A
+```javascript
+time(() => db.investments.aggregate( 
+    {$group : { _id : "$market", maxFundingSerieA: { $max: "$round_A" } } },
+    {$sort : { maxFundingSerieA : -1 } }
+))
+```
+- Total Returned Data: **20**
+- Execution Time: **185ms**
+- Screenshot:
+
+![IMG](images/aggregat-max-funding-serie-A.PNG)
+
+#### Get Information About Top Minimum Funding in Each Market at Serie A
+```javascript
+time(() => db.investments.aggregate( 
+    {$group : { _id : "$market", minFundingSerieA: { $min: "$round_A" } } },
+    {$match : { minFundingSerieA : {$ne : 0} } },
+    {$sort : { minFundingSerieA : 1 } }
+))
+```
+- Total Returned Data: **20**
+- Execution Time: **186ms**
+- Screenshot:
+
+![IMG](images/aggregat-min-funding-serie-A.PNG)
+
+#### Get Information About Average Funding in Each Market at Seed Stage
+```javascript
+time(() => db.investments.aggregate( 
+    {$group : { _id : "$market", avgFunding: { $avg: "$seed" } } },
+    {$match : { seed : {$ne : 0} } },
+    {$sort : { avgFunding : -1 } }
+))
+```
+- Total Returned Data: **20**
+- Execution Time: **181ms**
+- Screenshot:
+
+![IMG](images/aggregat-avg-funding-seed-stage.PNG)
 
 ## 👨‍🔬 Data Analysis
 ### 1. Data Cleaning
