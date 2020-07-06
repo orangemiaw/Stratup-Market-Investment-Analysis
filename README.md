@@ -130,8 +130,24 @@ Maka diketahui bahwa terdapat sebanyak **754** kategori market yang dimainkan ol
 ### 2. Method: sort()
 -------------
 
+#### Sort All Data by Name and City as Ascending
+```javascript
+db.investments.find().sort(
+    { "name": 1, "city": 1 }
+).limit(100).explain("executionStats")
+```
 
+- Total Returned Data: **100**
+- Execution Time: **55ms**
+- Screenshot:
 
+![IMG](images/sort-error-limit.PNG)
+
+Screenshot diatas menunjukan error apabila kita tidak menset limit pada penggunaat sort. Error tersebut menidentifikasikan bahwa ```sort()``` menggunakan RAM lebih dari yang diizinkan.
+
+![IMG](images/sort-filter-name-city.PNG)
+
+Screenshot diatas menunjukan bahwa query berhasil dieksekusi dan akan menampilkan 100 records data sesuai limit yang telah ditentukan. Semakin banyak data yang ditampilkan execution time akan makin tinggi pula.
 
 ### 3. Method: aggregat()
 -------------
@@ -143,6 +159,7 @@ time(() => db.investments.aggregate(
     {$group : { _id : "$_id.market", startup : { $sum : 1 } } } 
 ).toArray())
 ```
+
 - Total Returned Data: **754**
 - Execution Time: **577ms**
 - Screenshot:
@@ -156,6 +173,7 @@ time(() => db.investments.aggregate(
     {$group : { _id : "$_id.status", startup : { $sum : 1 } } } 
 ))
 ```
+
 - Total Returned Data: **4**
 - Execution Time: **276ms**
 - Screenshot:
@@ -169,6 +187,7 @@ time(() => db.investments.aggregate(
     {$sort : { maxFundingSerieA : -1 } }
 ))
 ```
+
 - Total Returned Data: **20**
 - Execution Time: **185ms**
 - Screenshot:
@@ -183,6 +202,7 @@ time(() => db.investments.aggregate(
     {$sort : { minFundingSerieA : 1 } }
 ))
 ```
+
 - Total Returned Data: **20**
 - Execution Time: **186ms**
 - Screenshot:
@@ -197,6 +217,7 @@ time(() => db.investments.aggregate(
     {$sort : { avgFunding : -1 } }
 ))
 ```
+
 - Total Returned Data: **20**
 - Execution Time: **181ms**
 - Screenshot:
