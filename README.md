@@ -22,11 +22,11 @@ File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 ## 🦄 Credentials
 ### Database Access
     Username: whiterose
-    Password: justforfun666ECorp
+    Password: ******
     Privileges: Read an Write
 
     Username: dosen
-    Password: vPKyrGO0G9AlPAd4
+    Password: ******
     Privileges: Only Read
 
 ### Database Connection
@@ -77,7 +77,7 @@ Namun, fungsi ini tidak cocok digunakan pada method ```find()```, sehingga untuk
 
 #### Get All Data
 
-Query di bawah akan menampilkan semuda data yang ada pada dataset secara keseluruhan.
+Query di bawah akan menampilkan semuda data yang ada pada collection investments secara keseluruhan.
 
 ```javascript
 db.investments.find().explain("executionStats")
@@ -90,18 +90,21 @@ db.investments.find().explain("executionStats")
 
 #### Get Startups Since 2000
 
-Untuk mendapatkan data seluruh startup yang berdiri dari tahun 2000 dapat menggunakan query di bawah. Untuk hal tersebut dibutuhkan pemfilteran dengan menambahkan query operator ```$gte```. Dengan menambahkan operator atau filter tambahan pada method find execution timenya menjadi lebih besar dari pada tanpa menggunakan operator atau filter tambahan, hal ini terjadi karena akan diperlukan pengecekan pada dokumen untuk dapat menampilkan data yang sesuai dengan filter atau operator yang ditentukan.
+Untuk mendapatkan data seluruh startup yang berdiri dari tahun 2000 dari collection investments dapat menggunakan query di bawah. Untuk hal tersebut dibutuhkan pemfilteran dengan menambahkan query operator ```$gte```. Dengan menambahkan operator atau filter tambahan pada method find execution timenya menjadi lebih besar dari pada tanpa menggunakan operator atau filter tambahan, hal ini terjadi karena akan diperlukan pengecekan pada dokumen untuk dapat menampilkan data yang sesuai dengan filter atau operator yang ditentukan.
 
 ```javascript
 db.investments.find(
     { founded_year : { $gte: 2000 } }
 ).explain("executionStats")
 ```
+
 - Total Returned Data: **34.823**
 - Execution Time: **29ms**
 - Screenshot:
 
 ![IMG](images/find-stratup-since-2000.PNG)
+
+![IMG](images/find-stratup-since-2000-response.PNG)
 
 #### Get All Market Category
 
@@ -130,29 +133,33 @@ Maka diketahui bahwa terdapat sebanyak **754** kategori market yang dimainkan ol
 ### 2. Method: sort()
 -------------
 
-#### Sort All Data by Name and City as Ascending
+#### Get All Data by Country and Sort by Name as Ascending
+Query dibawah akan menampilkan isi dari collection investments yang memiliki kode negara ```USA``` dan diurutkan secara ascending berdasarkan nama startupnya.
+
 ```javascript
-db.investments.find().sort(
-    { "name": 1, "city": 1 }
+db.investments.find({ "country_code" : "USA"}).sort(
+    { "name": 1 }
 ).limit(100).explain("executionStats")
 ```
 
 - Total Returned Data: **100**
-- Execution Time: **55ms**
+- Execution Time: **43ms**
 - Screenshot:
 
 ![IMG](images/sort-error-limit.PNG)
 
 Screenshot diatas menunjukan error apabila kita tidak menset limit pada penggunaat sort. Error tersebut menidentifikasikan bahwa ```sort()``` menggunakan RAM lebih dari yang diizinkan.
 
-![IMG](images/sort-filter-name-city.PNG)
+![IMG](images/sort-filter-country-name.PNG)
 
-Screenshot diatas menunjukan bahwa query berhasil dieksekusi dan akan menampilkan 100 records data sesuai limit yang telah ditentukan. Semakin banyak data yang ditampilkan execution time akan makin tinggi pula.
+Screenshot diatas menunjukan bahwa query berhasil dieksekusi dan akan menampilkan 100 records data sesuai limit yang telah ditentukan. Semakin banyak find parameter dan data yang ditampilkan execution time akan makin tinggi pula.
 
 ### 3. Method: aggregat()
 -------------
 
 #### Get Total Startup in Each Market
+Mendapatkan jumlah total stratup yang ada setiap marketnya, disini pertama akan dikelompokan berdasarkan marketnya. Kemudian, setiap stratup dalam market yang sama akan dijamlahkan dalam variabel ```startup``` dengan operator ```$sum```. Kemudian hasil dari pemjumlahaan tersebut nilainya dikembalikan kedalam group kedua untuk dapat menampilkan nama market dan jumlah stratup didalamnya dari collection investments.
+
 ```javascript
 time(() => db.investments.aggregate( 
     {$group : { _id : { "market" : "$market", "name" : "$name" }, startup : { $sum : 1 } } }, 
@@ -167,6 +174,8 @@ time(() => db.investments.aggregate(
 ![IMG](images/aggregat-startup-market.PNG)
 
 #### Get Current Startup Status
+Untuk mendapatkan data mengenai berapa jumlah stratup yang berjalan, berhenti, maupun terakuisis cara kerjanya hampir sama dengan sebelumnya. Namun, disini pengelompokannya berdasarkan statusnya.
+
 ```javascript
 time(() => db.investments.aggregate( 
     {$group : { _id : { "status" : "$status", "name" : "$name" }, startup : { $sum : 1 } } }, 
@@ -181,6 +190,8 @@ time(() => db.investments.aggregate(
 ![IMG](images/aggregat-startup-status.PNG)
 
 #### Get Information About Top Maximum Funding in Each Market at Serie A
+Menampilkan informasi market yang mendapatkan funding terbesar dari Seria A. Pengelompokan berdasarkan marketnya dan kemudian diurutkan berdasarkan pendanaan yang didapatkan di Seria A, diurutkan dari yang tertinggi ke yang terendah.
+
 ```javascript
 time(() => db.investments.aggregate( 
     {$group : { _id : "$market", maxFundingSerieA: { $max: "$round_A" } } },
@@ -195,6 +206,8 @@ time(() => db.investments.aggregate(
 ![IMG](images/aggregat-max-funding-serie-A.PNG)
 
 #### Get Information About Top Minimum Funding in Each Market at Serie A
+Menampilkan mengenai market yang mendapatkan pendanaan paling kecil pada Seria A.
+
 ```javascript
 time(() => db.investments.aggregate( 
     {$group : { _id : "$market", minFundingSerieA: { $min: "$round_A" } } },
@@ -210,6 +223,8 @@ time(() => db.investments.aggregate(
 ![IMG](images/aggregat-min-funding-serie-A.PNG)
 
 #### Get Information About Average Funding in Each Market at Seed Stage
+Query dibawah akan menampilkan data market dan rata - rata pendanaan yang didapatkan dari Seed Stage, diurutkan dari rata - rata tertinggi ke terendah (descending). Pada query ini kita akan mengabaikan data yang field atau variabel seednya 0, disini dianggap bahwa data tersebut merupakan data stratup yang tidak mendapatkan pendanaan dan tidak perlu dihitung. 
+
 ```javascript
 time(() => db.investments.aggregate( 
     {$group : { _id : "$market", avgFunding: { $avg: "$seed" } } },
