@@ -3,12 +3,7 @@
 ## 👋 Introduction
 Dataset yang dianalisis merupakan data Investment Venture Capital (VC), Angel Investor, maupun Seed Stage Investment terhadap beberapa Startup dari berbagai kategori market yang berbeda. Dataset ini dilansir dari halaman Kaggle, diambil dari situs Crunchbase. Crunchbase sendiri adalah platform untuk menemukan informasi bisnis tentang perusahaan swasta dan publik. Informasi Crunchbase termasuk informasi investasi dan pendanaan, anggota pendiri dan individu dalam posisi kepemimpinan, merger dan akuisisi, berita, dan tren industri.
 
-Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk menghadirkan ide-ide startup yang cemerlang, dimana saat ini hal tersebut mungkin terasa sulit bagi calon wirausahawan terutama ketika tampaknya semua orang sudah menyapu setiap ide bagus untuk bisnis. Tetap saja, sangat mungkin untuk menjadi sukses dengan memperbaiki produk yang ada atau memutar ide unik pada ide lama. Manfaat wirausaha dapat membuat upaya meluncurkan startup sangat bermanfaat. Selain kebebasan yang berasal dari menjadi bos Anda sendiri, memulai bisnis membawa lebih banyak kemandirian, kepuasan kerja yang lebih besar, dan potensi penghasilan yang berpotensi terbuka. Hal tersebut yang melatar belakangi kami memilih topik ini.
-
-## 😊 Teams
-- Imam Kusniadi (17.11.1341)
-- Angga Kurniawan (17.11.1373)
-- Mahmuddin Faqih A (17.11.1399)
+Informasi yang berada pada dataset dapat digunakan sebagai alat bantu untuk menghadirkan ide-ide startup yang cemerlang, dimana saat ini hal tersebut mungkin terasa sulit bagi calon wirausahawan terutama ketika tampaknya semua orang sudah menyapu setiap ide bagus untuk bisnis. Tetap saja, sangat mungkin untuk menjadi sukses dengan memperbaiki produk yang ada atau memutar ide unik pada ide lama. Manfaat wirausaha dapat membuat upaya meluncurkan startup sangat bermanfaat. Selain kebebasan yang berasal dari menjadi bos Anda sendiri, memulai bisnis membawa lebih banyak kemandirian, kepuasan kerja yang lebih besar, dan potensi penghasilan yang berpotensi terbuka. Hal tersebut yang melatar belakangi pemilihan topik ini.
 
 ## 📕 Dataset
 Kaggle Link: https://www.kaggle.com/arindam235/startup-investments-crunchbase
@@ -41,7 +36,8 @@ File Size (CSV/MongoDB): 11.95 MB / 43.49MB
 - Transfer: 7 TB
 
 ## 🔥 Query Performance Analysis
-Performa eksekusi query dari database, dengan daftar query pada method API: find(), shord(), dan aggregat (sum, avg, min, dan max). Pertama, kami akan menambahkan sebuah fungsi untuk menghitung sebuah query dijalankan. Untuk menambahkan fungsi tersebut kita menambahkan code program dibawah pada file ```.mongorc.js```.
+Performa eksekusi query dari database, dengan daftar query pada method API: find(), shord(), dan aggregat (sum, avg, min, dan max). Pertama, 
+akan menambahkan sebuah fungsi untuk menghitung sebuah query dijalankan. Untuk menambahkan fungsi tersebut kita menambahkan code program dibawah pada file ```.mongorc.js```.
 
 ```javascript
 function time(command) {
